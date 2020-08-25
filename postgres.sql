@@ -1,3 +1,4 @@
+﻿--DB TROSAOBJECT
 CREATE DATABASE trosa;
 CREATE USER kiady with password 'kiady';
 GRANT CONNECT ON DATABASE trosa TO kiady;
