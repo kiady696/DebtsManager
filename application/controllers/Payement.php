@@ -4,6 +4,7 @@
         public function __construct()
         {
                 parent::__construct();
+                $this->load->model('trosa_model');
                 $this->load->model('payement_model');
                 $this->load->helper('url_helper');
         }

@@ -15,6 +15,8 @@
 
         }
 
+        
+
         public function validateRemb($id_payement){
             $query = $this->db->get_where('payementavalider',array('idpayement' => $id_payement));
             $remb = $query->row_array();
@@ -25,6 +27,9 @@
                 'dateremboursement' => $remb['datepayement']
             );
             $this->db->insert('remboursements',$data);
+            //Augm etat if debt fully payed
+            $reste = $this->trosa_model->checkEtatTrosa($remb['idtrosa']);
+            //echo 'ny reste tao :'.$reste;
         }
 
         public function genPK($prefixe,$tableName){

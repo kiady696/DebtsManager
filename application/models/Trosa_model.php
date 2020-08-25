@@ -5,6 +5,17 @@
         public $date;
         public $total;
 
+        public function checkEtatTrosa($id_trosa){
+            $reste = $this->get_reste($id_trosa);
+            if($reste == 0){
+                $this->db->where('iddette',$id_trosa);
+                $this->db->set('etat',10);
+                $this->db->update('trosa');
+            }else{
+                return $reste;
+            }
+        }
+
         public function get_reste($id_trosa){
             $query = $this->db->get_where('trosa',array('iddette' => $id_trosa));
             $totalARemb = $query->row_array()['total'];
@@ -18,6 +29,7 @@
             $reste = $totalARemb - $DejaRemb;
             //echo 'Le reste est: '.$reste;
             return $reste;
+            
         }
 
         public function pre_remboursement($id_trosa){
