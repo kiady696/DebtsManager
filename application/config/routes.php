@@ -49,8 +49,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
-$route['trosa/allegerDette'] = 'trosa/allegerDette';
-$route['trosa/rembourser/(:any)?:any'] = 'trosa/rembourser/$1';
+$route['trosa/rembourser/annuler/(:any)'] = 'payement/annuler/$1';
+$route['trosa/rembourser/valider/(:any)'] = 'payement/valider/$1';
+$route['trosa/allegerDette/(:any)/(:any)'] = 'trosa/allegerDette/$1/$2';
+$route['trosa/rembourser/(:any)/(:any)'] = 'trosa/rembourser/$1/$2';
 $route['default_controller'] = 'trosa';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

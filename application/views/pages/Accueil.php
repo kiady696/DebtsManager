@@ -13,21 +13,20 @@
                 <td>Tompon'ny trosa</td>
                 <td>Date nitrosany</td>
                 <td>Totalin'ny trosany</td>
-                <td>Ny efa nalohany</td>
-                <td>Reste à payer</td>
                 <td>Etat</td>
             </tr>
+            <?php foreach($users as $u): ?>
             <tr>
-                <?php foreach($users as $u): ?>
+                
                 <td> <?php echo $u['nom']; ?> </td>
                 <td><?php echo $u['datetrosa']; ?></td>
                 <td><?php echo $u['total']; ?></td>
-                <td>Ny efa nalohany</td>
-                <td>Reste à payer </td>
                 <td><?php echo $u['etat']; ?></td>
-                <td><a href="<?php echo site_url('trosa/rembourser/'.$u['id']); ?>?usr=<?php echo $u['nom']; ?>&refD=<?php echo $u['iddette']; ?>"> Simuler remboursement </a></td>
-                <?php endforeach; ?>
-            </tr>    
+                <td><a href="<?php echo site_url('trosa/rembourser/'.$u['id'].'/'.$u['iddette']); ?>"> Simuler remboursement </a></td>
+
+                
+            </tr> 
+            <?php endforeach; ?>   
         </table>
     <!-- Eto ny liste an'ny trosa | Tompon'ny trosa | Date nitrosany | Totalin'ny trosany | Ny efa nalohany | Reste à payer | ETAT | -->
 </body>
