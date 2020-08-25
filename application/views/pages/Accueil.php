@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1><?php echo $title; ?></h1>
-    <p> withObject </p>
+    <p> withObject   </p>
         <table border="1px">
             <tr>
                 <td>Tompon'ny trosa</td>
